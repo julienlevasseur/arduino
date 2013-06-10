@@ -4,17 +4,17 @@
 
 // Pour l horloge
 int rtc[7];
-int heure;
+int hour;
 int minute;
-int seconde;
-int jour;
-int mois;
-int annee;
-int calendrier;
+int second;
+int day;
+int month;
+int year;
+int calendar;
 
 
 void setup() {
- //reglage horloge 
+ //time setting 
  /* 
   RTC.stop();
   RTC.set(DS1307_SEC,1);
@@ -32,34 +32,34 @@ void loop() {
  RTC.get(rtc,true);
     for(int i=0; i<7; i++)
       {
-      heure=rtc[2];   
-      calendrier=rtc[3];
-      jour=rtc[4];
-      mois=rtc[5];
-      annee=rtc[6];
+      houre=rtc[2];   
+      calendar=rtc[3];
+      day=rtc[4];
+      month=rtc[5];
+      year=rtc[6];
       minute=rtc[1];
-      seconde=rtc[0];
+      second=rtc[0];
       }
 Serial.print(" ");
     if (jour < 10)
       {
       Serial.print("0");
       }
-    Serial.print(jour);
+    Serial.print(day);
     Serial.print(" ");
     if (mois < 10)
       {
       Serial.print("0");
       }
-    Serial.print(mois);
+    Serial.print(month);
     Serial.print(" ");
-    Serial.print(annee);
+    Serial.print(year);
     Serial.print("   ");
-    if (heure < 10)
+    if (hour < 10)
       {
       Serial.print("0");
       }
-    Serial.print(heure);
+    Serial.print(hour);
     Serial.print(":");
     if (minute < 10)
       {
@@ -67,11 +67,11 @@ Serial.print(" ");
       }
     Serial.print(minute);
     Serial.print(":");
-    if (seconde < 10)
+    if (second < 10)
       {
       Serial.print("0");
       }
-    Serial.print(seconde);
+    Serial.print(second);
     Serial.println("   ");
 delay(1000);
 
